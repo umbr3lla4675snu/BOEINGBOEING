@@ -30,18 +30,6 @@ class LSTMDataset(Dataset):
 
         return input_tensor, target_tensor
 
-class DataLoader(Dataset):
-    def __init__(self, data, batch_size=32, shuffle=True):
-        self.data = data
-        self.batch_size = batch_size
-        self.shuffle = shuffle
-
-    def __len__(self):
-        return len(self.data)
-
-    def __getitem__(self, idx):
-        return self.data[idx]
-
 def separate_data(data):
     # 지역정보(code_new)별로 데이터 분리
     datas = {}
